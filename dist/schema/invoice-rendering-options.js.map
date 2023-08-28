@@ -1,0 +1,1 @@
+{"version":3,"file":"invoice-rendering-options.js","sourceRoot":"","sources":["../../src/schema/invoice-rendering-options.ts"],"names":[],"mappings":";;AAAA,wCAAoC;AAEpC,iBAAO,CAAC,UAAU,CAAC,+BAA+B,EAAE;IAClD,MAAM,EAAE,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC;QACd,gBAAgB,EAAE,CAAC,CAAC,YAAY,CAAC,oBAAoB,EAAE;YACrD,WAAW,EACT,yFAAyF;YAC3F,QAAQ,EAAE,IAAI;SACf,CAAC;KACH,CAAC;CACH,CAAC,CAAA"}

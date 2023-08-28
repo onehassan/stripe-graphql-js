@@ -1,0 +1,1 @@
+{"version":3,"file":"subscription-automatic-tax.js","sourceRoot":"","sources":["../../src/schema/subscription-automatic-tax.ts"],"names":[],"mappings":";;AAAA,wCAAoC;AAEpC,iBAAO,CAAC,UAAU,CAAC,gCAAgC,EAAE;IACnD,WAAW,EAAE,EAAE;IACf,MAAM,EAAE,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC;QACd,OAAO,EAAE,CAAC,CAAC,aAAa,CAAC,SAAS,EAAE;YAClC,WAAW,EAAE,iEAAiE;SAC/E,CAAC;KACH,CAAC;CACH,CAAC,CAAA"}
