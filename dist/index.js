@@ -13,8 +13,9 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./builder"), exports);
 __exportStar(require("./schema"), exports);
 __exportStar(require("./server"), exports);
 __exportStar(require("./types"), exports);
+//# sourceMappingURL=index.js.map

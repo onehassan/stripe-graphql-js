@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.schema = void 0;
 require("./address");
 require("./customer");
@@ -51,5 +51,6 @@ require("./charges");
 require("./charge");
 require("./connectedAccount");
 require("./connectedAccounts");
-var builder_1 = require("../builder");
+const builder_1 = require("../builder");
 exports.schema = builder_1.builder.toSchema();
+//# sourceMappingURL=index.js.map

@@ -1,11 +1,12 @@
 "use strict";
-exports.__esModule = true;
-var builder_1 = require("../builder");
+Object.defineProperty(exports, "__esModule", { value: true });
+const builder_1 = require("../builder");
 builder_1.builder.objectType('StripeSubscriptionAutomaticTax', {
     description: '',
-    fields: function (t) { return ({
+    fields: (t) => ({
         enabled: t.exposeBoolean('enabled', {
-            description: "Whether Stripe automatically computes tax on this subscription."
+            description: `Whether Stripe automatically computes tax on this subscription.`
         })
-    }); }
+    })
 });
+//# sourceMappingURL=subscription-automatic-tax.js.map

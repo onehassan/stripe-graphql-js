@@ -1,8 +1,8 @@
 "use strict";
-exports.__esModule = true;
-var builder_1 = require("../builder");
+Object.defineProperty(exports, "__esModule", { value: true });
+const builder_1 = require("../builder");
 builder_1.builder.objectType('StripeInvoiceStatusTransitions', {
-    fields: function (t) { return ({
+    fields: (t) => ({
         finalizedAt: t.exposeInt('finalized_at', {
             description: 'The time that the invoice draft was finalized.',
             nullable: true
@@ -19,5 +19,6 @@ builder_1.builder.objectType('StripeInvoiceStatusTransitions', {
             description: 'The time that the invoice was voided.',
             nullable: true
         })
-    }); }
+    })
 });
+//# sourceMappingURL=invoice-status-transitions.js.map

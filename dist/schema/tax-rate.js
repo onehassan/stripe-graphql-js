@@ -1,14 +1,14 @@
 "use strict";
-exports.__esModule = true;
-var builder_1 = require("../builder");
+Object.defineProperty(exports, "__esModule", { value: true });
+const builder_1 = require("../builder");
 builder_1.builder.objectType('StripeTaxRate', {
     description: 'Tax rates can be applied to [invoices](https://stripe.com/docs/billing/invoices/tax-rates), [subscriptions](https://stripe.com/docs/billing/subscriptions/taxes) and [Checkout Sessions](https://stripe.com/docs/payments/checkout/set-up-a-subscription#tax-rates) to collect tax.',
-    fields: function (t) { return ({
+    fields: (t) => ({
         id: t.exposeString('id', {
             description: 'Unique identifier for the object.'
         }),
         object: t.exposeString('object', {
-            description: "String representing the object's type. Objects of the same type share the same value."
+            description: `String representing the object's type. Objects of the same type share the same value.`
         }),
         active: t.exposeBoolean('active', {
             description: 'Defaults to `true`. When set to `false`, this tax rate cannot be used with new applications or Checkout Sessions, but will still work for subscriptions and invoices that already have it set.'
@@ -53,5 +53,6 @@ builder_1.builder.objectType('StripeTaxRate', {
             description: 'The high-level tax type, such as `vat` or `sales_tax`.',
             nullable: true
         })
-    }); }
+    })
 });
+//# sourceMappingURL=tax-rate.js.map

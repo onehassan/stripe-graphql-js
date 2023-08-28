@@ -1,9 +1,9 @@
 "use strict";
-exports.__esModule = true;
-var builder_1 = require("../builder");
+Object.defineProperty(exports, "__esModule", { value: true });
+const builder_1 = require("../builder");
 builder_1.builder.objectType('StripeConnectedAccount', {
     description: 'Stripe charge object',
-    fields: function (t) { return ({
+    fields: (t) => ({
         id: t.exposeString('id'),
         object: t.exposeString('object'),
         country: t.exposeString('country', { nullable: true }),
@@ -25,5 +25,6 @@ builder_1.builder.objectType('StripeConnectedAccount', {
         futureRequirements: t.expose('future_requirements', { type: 'JSON' }),
         payoutsEnabled: t.exposeBoolean('payouts_enabled'),
         settings: t.expose('settings', { type: 'JSON' })
-    }); }
+    })
 });
+//# sourceMappingURL=connectedAccount.js.map

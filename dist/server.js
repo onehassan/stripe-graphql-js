@@ -1,53 +1,44 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.schema = exports.createStripeGraphQLServer = void 0;
-var graphql_yoga_1 = require("graphql-yoga");
-var schema_1 = require("./schema");
-exports.schema = schema_1.schema;
-var utils_1 = require("./utils");
-var createStripeGraphQLServer = function (params) {
-    var cors = params === null || params === void 0 ? void 0 : params.cors;
-    var isAllowed = params === null || params === void 0 ? void 0 : params.isAllowed;
-    var graphiql = params === null || params === void 0 ? void 0 : params.graphiql;
-    var context = function (context) {
-        var request = context.request;
+const graphql_yoga_1 = require("graphql-yoga");
+const schema_1 = require("./schema");
+Object.defineProperty(exports, "schema", { enumerable: true, get: function () { return schema_1.schema; } });
+const utils_1 = require("./utils");
+const createStripeGraphQLServer = (params) => {
+    const cors = params === null || params === void 0 ? void 0 : params.cors;
+    const isAllowed = params === null || params === void 0 ? void 0 : params.isAllowed;
+    const graphiql = params === null || params === void 0 ? void 0 : params.graphiql;
+    const context = (context) => {
+        const { request } = context;
         // user id
-        var userClaims = (0, utils_1.getUserClaims)(request);
+        const userClaims = (0, utils_1.getUserClaims)(request);
         // check if using correct `x-hasura-admin-secret` header
-        var adminSecretFromHeader = request.headers.get("x-hasura-admin-secret");
-        var adminSecret = process.env.NHOST_ADMIN_SECRET;
+        const adminSecretFromHeader = request.headers.get("x-hasura-admin-secret");
+        const adminSecret = process.env.NHOST_ADMIN_SECRET;
         // check if the request is from Hasura
-        var nhostWebhookSecretFromHeader = request.headers.get("x-nhost-webhook-secret");
-        var nhostWebhookSecret = process.env.NHOST_WEBHOOK_SECRET;
-        var role = request.headers.get("x-hasura-role");
+        const nhostWebhookSecretFromHeader = request.headers.get("x-nhost-webhook-secret");
+        const nhostWebhookSecret = process.env.NHOST_WEBHOOK_SECRET;
+        const role = request.headers.get("x-hasura-role");
         // variables
-        var isAdmin = adminSecretFromHeader === adminSecret || (role === "admin" && nhostWebhookSecretFromHeader === nhostWebhookSecret);
+        const isAdmin = adminSecretFromHeader === adminSecret || (role === "admin" && nhostWebhookSecretFromHeader === nhostWebhookSecret);
         // if no isAllowed function is provided, we will allow admin requests
-        var isAllowedFunction = isAllowed ||
-            (function (_stripeCustomerId, context) {
+        const isAllowedFunction = isAllowed ||
+            ((_stripeCustomerId, context) => {
                 return context.isAdmin;
             });
         // return
-        return __assign(__assign({}, context), { isAllowed: isAllowedFunction, userClaims: userClaims, isAdmin: isAdmin });
+        return Object.assign(Object.assign({}, context), { isAllowed: isAllowedFunction, userClaims,
+            isAdmin });
     };
-    var yoga = (0, graphql_yoga_1.createYoga)({
-        cors: cors,
-        graphiql: graphiql,
-        context: context,
+    const yoga = (0, graphql_yoga_1.createYoga)({
+        cors,
+        graphiql,
+        context,
         schema: schema_1.schema,
-        graphqlEndpoint: "*"
+        graphqlEndpoint: "*",
     });
     return yoga;
 };
 exports.createStripeGraphQLServer = createStripeGraphQLServer;
+//# sourceMappingURL=server.js.map
